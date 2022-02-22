@@ -3,23 +3,35 @@ package com.mitskevich.task1.entity;
 import java.util.Arrays;
 
 public class CustomArray {
-    private int[] array = new int[]{0, 3, -5, 6, -7};
+    private int[] array;
 
     public CustomArray() {
     }
 
-    public int[] getArray() {
-        return array;
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
-    public void setArray(int[] array) {
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    public int[] getArray() {
+        return Arrays.copyOf(array, array.length);
+    }
+
+    public void setArray(int... array) {
         this.array = array;
     }
 
     @Override
     public String toString() {
-        return "CustomArray{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int a : array) {
+            stringBuilder.append(a).append(" ");
+        }
+        return stringBuilder.toString();
     }
 }
