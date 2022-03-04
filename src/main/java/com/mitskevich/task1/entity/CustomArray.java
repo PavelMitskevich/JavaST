@@ -8,22 +8,40 @@ public class CustomArray {
     public CustomArray() {
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
     public int[] getArray() {
         return Arrays.copyOf(array, array.length);
     }
 
     public void setArray(int... array) {
         this.array = array;
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(array);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        CustomArray customArray = (CustomArray) obj;
+        if (customArray.array == null || this.array == null) {
+            return this.array == null && customArray.array == null;
+        }
+        if (customArray.array.length != this.array.length) {
+            return false;
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != customArray.array[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
