@@ -1,6 +1,8 @@
 package com.mitskevich.task1.observer.impl;
 
 import com.mitskevich.task1.entity.CustomArray;
+import com.mitskevich.task1.entity.CustomArrayParameter;
+import com.mitskevich.task1.entity.Warehouse;
 import com.mitskevich.task1.exception.CustomCommonException;
 import com.mitskevich.task1.observer.CustomArrayEvent;
 import com.mitskevich.task1.observer.Observer;
@@ -25,13 +27,14 @@ public class CustomArrayObserver implements Observer {
         try {
             OptionalDouble average = calculateService.averageOfArray(customArray);
             OptionalInt sum = calculateService.sumOfElements(customArray);
-            int countPositive = counterService.countPositiveNumbers(customArray);
-            int countNegative = counterService.countNegativeNumbers(customArray);
             OptionalInt min = searchingService.searchingMinimal(customArray);
             OptionalInt max = searchingService.searchingMaximum(customArray);
+            CustomArrayParameter customArrayParameter = new CustomArrayParameter(max, min, sum, average);
+            Warehouse warehouse = Warehouse.getInstance();
+            warehouse.put(customArray.getArrayId(), customArrayParameter);
+            LOGGER.info("Custom array " + customArray + " update with parameters: " + customArrayParameter);
         } catch (CustomCommonException e) {
-            e.printStackTrace();
+            LOGGER.error("Failed to change parameters", e);
         }
-
     }
 }

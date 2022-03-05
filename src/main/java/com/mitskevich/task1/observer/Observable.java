@@ -1,9 +1,11 @@
 package com.mitskevich.task1.observer;
 
-public interface Observable {
-    void attach(Observer observer);
+import com.mitskevich.task1.observer.impl.CustomArrayObserver;
 
-    void detach(Observer observer);
+public interface Observable {
+    void attach(CustomArrayObserver observer);
+
+    void detach(CustomArrayObserver observer);
 
     void notifyObservers();
 }
