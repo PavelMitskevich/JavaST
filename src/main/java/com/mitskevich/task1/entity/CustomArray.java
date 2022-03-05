@@ -1,11 +1,16 @@
 package com.mitskevich.task1.entity;
 
+import com.mitskevich.task1.util.IdGenerator;
+
 import java.util.Arrays;
 
 public class CustomArray {
     private int[] array;
+    private int arrayId;
 
     public CustomArray() {
+        arrayId = IdGenerator.generateId();
+        array = getArray();
     }
 
     public int[] getArray() {
@@ -14,6 +19,10 @@ public class CustomArray {
 
     public void setArray(int... array) {
         this.array = array;
+    }
+
+    public int getArrayId() {
+        return arrayId;
     }
 
     @Override

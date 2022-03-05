@@ -1,7 +1,7 @@
 package com.mitskevich.task1.service.impl;
 
 import com.mitskevich.task1.entity.CustomArray;
-import com.mitskevich.task1.exceptions.CustomCommonException;
+import com.mitskevich.task1.exception.CustomCommonException;
 import com.mitskevich.task1.service.ArraySortService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

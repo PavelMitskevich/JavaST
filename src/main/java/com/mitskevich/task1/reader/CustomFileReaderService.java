@@ -1,5 +1,9 @@
 package com.mitskevich.task1.reader;
 
+import java.util.List;
+
 public interface CustomFileReaderService {
-    int[] readTextFromFile(String fileName);
+    String readLineFromFile(String fileName);
+
+    List<String> readTextFromFile(String fileName);
 }
