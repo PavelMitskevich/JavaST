@@ -9,10 +9,10 @@ import java.util.regex.Pattern;
 public class CustomValidator implements CustomValidatorService {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Pattern PATTERN = Pattern.compile("([-?\\d+\\s]+)|([-?\\d+,\\s]+)");
-    private boolean flag;
 
     @Override
     public boolean isValidLine(String text) {
+        boolean flag = false;
         if (text.matches(PATTERN.pattern())) {
             LOGGER.info("Successful validation");
             flag = true;
