@@ -6,64 +6,69 @@ import com.mitskevich.task1.service.ArraySortService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
+
 public class ArraySortServiceImpl implements ArraySortService {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     public int[] bubbleSort(CustomArray customArray) throws CustomCommonException {
-        if (customArray == null || customArray.getArray().length == 0) {
+        int[] array = customArray.getArray();
+        if (customArray == null || array.length == 0) {
             LOGGER.error("This array is empty or null");
             throw new CustomCommonException("This array is empty or null");
         }
-        for (int i = 0; i < customArray.getArray().length - 1; i++) {
-            for (int j = i + 1; j < customArray.getArray().length; j++) {
-                if (customArray.getArray()[i] > customArray.getArray()[j]) {
-                    int temp = customArray.getArray()[i];
-                    customArray.getArray()[i] = customArray.getArray()[j];
-                    customArray.getArray()[j] = temp;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
         }
-        return customArray.getArray();
+        return array;
     }
 
     @Override
     public int[] insertionSort(CustomArray customArray) throws CustomCommonException {
-        if (customArray == null || customArray.getArray().length == 0) {
+        int[] array = customArray.getArray();
+        if (customArray == null || array.length == 0) {
             LOGGER.error("This array is empty or null");
             throw new CustomCommonException("This array is empty or null");
         }
-        for (int i = 1; i < customArray.getArray().length; i++) {
-            int value = customArray.getArray()[i];
+        for (int i = 1; i < array.length; i++) {
+            int value = array[i];
             int j = i - 1;
-            while (j >= 0 && value < customArray.getArray()[j]) {
-                customArray.getArray()[j + 1] = customArray.getArray()[j];
+            while (j >= 0 && value < array[j]) {
+                array[j + 1] = array[j];
                 j--;
             }
-            customArray.getArray()[j + 1] = value;
+            array[j + 1] = value;
         }
-        return customArray.getArray();
+        return array;
     }
 
     @Override
     public int[] selectionSort(CustomArray customArray) throws CustomCommonException {
-        if (customArray == null || customArray.getArray().length == 0) {
+        int[] array = customArray.getArray();
+        if (customArray == null || array.length == 0) {
             LOGGER.error("This array is empty or null");
             throw new CustomCommonException("This array is empty or null");
         }
-        for (int i = 0; i < customArray.getArray().length; i++) {
-            int min = customArray.getArray()[i];
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];
             int minId = i;
-            for (int j = i + 1; j < customArray.getArray().length; j++) {
-                if (customArray.getArray()[j] < min) {
-                    min = customArray.getArray()[j];
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < min) {
+                    min = array[j];
                     minId = j;
                 }
             }
-            int temp = customArray.getArray()[i];
-            customArray.getArray()[i] = min;
-            customArray.getArray()[minId] = temp;
+            int temp = array[i];
+            array[i] = min;
+            array[minId] = temp;
         }
-        return customArray.getArray();
+        return array;
     }
 }
