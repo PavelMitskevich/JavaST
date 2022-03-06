@@ -45,7 +45,7 @@ public class Main {
         OptionalInt min1 = searchingService.searchingMinimal(customArray1);
 
         CustomArrayParameter customArrayParameter = new CustomArrayParameter(max, min, sum, average);
-        CustomArrayParameter customArrayParameter1 = new CustomArrayParameter(max1,min1,sum1,average1);
+        CustomArrayParameter customArrayParameter1 = new CustomArrayParameter(max1, min1, sum1, average1);
 
         Warehouse warehouse = Warehouse.getInstance();
         warehouse.put(customArray.getArrayId(), customArrayParameter);
@@ -53,7 +53,7 @@ public class Main {
         System.out.println(warehouse);
 
         customArray.setArray(2, 3, 4, 5);
-        customArray1.setArray(1,3,5,7);
+        customArray1.setArray(1, 3, 5, 7);
 
         System.out.println(warehouse);
 
