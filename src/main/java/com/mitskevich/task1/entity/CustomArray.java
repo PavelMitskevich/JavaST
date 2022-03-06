@@ -8,6 +8,11 @@ public class CustomArray {
     private int[] array;
     private int arrayId;
 
+    public CustomArray(int[] array) {
+        this.array = array;
+        arrayId = IdGenerator.generateId();
+    }
+
     public CustomArray() {
         arrayId = IdGenerator.generateId();
         array = getArray();
