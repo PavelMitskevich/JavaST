@@ -10,7 +10,7 @@ public class CustomArray extends CustomArrayObservable {
     private int[] array;
     private int arrayId;
 
-    public CustomArray(int[] array) {
+    public CustomArray(int... array) {
         this.array = array;
         arrayId = IdGenerator.generateId();
         Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
