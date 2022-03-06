@@ -15,11 +15,11 @@ public class ArrayCalculateServiceImpl implements ArrayCalculateService {
     @Override
     public OptionalDouble averageOfArray(CustomArray customArray) throws CustomCommonException {
         if (customArray == null) {
-            LOGGER.error("This array is null");
-            throw new CustomCommonException("This array is null");
+            LOGGER.error("This array is null, can't find average");
+            throw new CustomCommonException("This array is null, can't find average");
         }
         if (customArray.getArray().length == 0) {
-            LOGGER.error("This array is empty");
+            LOGGER.error("This array is empty, can't find average");
             return OptionalDouble.empty();
         }
         int sum = 0;
@@ -33,11 +33,11 @@ public class ArrayCalculateServiceImpl implements ArrayCalculateService {
     @Override
     public OptionalInt sumOfElements(CustomArray customArray) throws CustomCommonException {
         if (customArray == null ) {
-            LOGGER.error("This array is null");
-            throw new CustomCommonException("This array is null");
+            LOGGER.error("This array is null, can't find sum");
+            throw new CustomCommonException("This array is null, can't find sum");
         }
         if (customArray.getArray().length == 0) {
-            LOGGER.error("This array is empty");
+            LOGGER.error("This array is empty, can't find sum");
             return OptionalInt.empty();
         }
         int sum = 0;

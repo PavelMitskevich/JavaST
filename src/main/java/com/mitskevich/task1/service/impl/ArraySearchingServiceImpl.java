@@ -14,8 +14,8 @@ public class ArraySearchingServiceImpl implements ArraySearchingService {
     @Override
     public OptionalInt searchingMinimal(CustomArray customArray) throws CustomCommonException {
         if (customArray == null || customArray.getArray().length == 0) {
-            LOGGER.error("This array is empty or null");
-            throw new CustomCommonException("This array is empty or null");
+            LOGGER.error("This array is empty or null, can't find min");
+            throw new CustomCommonException("This array is empty or null, can't find min");
         }
         int min = customArray.getArray()[0];
         for (int i = 0; i < customArray.getArray().length; i++) {
@@ -29,8 +29,8 @@ public class ArraySearchingServiceImpl implements ArraySearchingService {
     @Override
     public OptionalInt searchingMaximum(CustomArray customArray) throws CustomCommonException {
         if (customArray == null || customArray.getArray().length == 0) {
-            LOGGER.error("This array is empty or null");
-            throw new CustomCommonException("This array is empty or null");
+            LOGGER.error("This array is empty or null, can't find max");
+            throw new CustomCommonException("This array is empty or null, can't find max");
         }
         int max = customArray.getArray()[0];
         for (int i = 0; i < customArray.getArray().length; i++) {

@@ -14,6 +14,8 @@ public class CustomArray extends CustomArrayObservable{
         this.array = array;
         arrayId = IdGenerator.generateId();
         Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
+        attach(new CustomArrayObserver());
+        notifyObservers();
     }
 
     public CustomArray() {
@@ -21,8 +23,7 @@ public class CustomArray extends CustomArrayObservable{
         this.array = new int[0];
         Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
         attach(new CustomArrayObserver());
-        notifyObservers();
-    }
+        }
 
     public int[] getArray() {
         return Arrays.copyOf(array, array.length);

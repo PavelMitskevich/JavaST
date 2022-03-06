@@ -21,7 +21,6 @@ public class CustomArrayObserver implements Observer {
     public void parameterChanged(CustomArrayEvent event) {
         CustomArray customArray = event.getSource();
         ArrayCalculateService calculateService = new ArrayCalculateServiceImpl();
-        ArrayCounterService counterService = new ArrayCounterServiceImpl();
         ArraySearchingService searchingService = new ArraySearchingServiceImpl();
 
         try {

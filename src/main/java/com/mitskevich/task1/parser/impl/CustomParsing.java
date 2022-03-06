@@ -11,7 +11,6 @@ import java.util.List;
 
 public class CustomParsing implements CustomParsingService {
     private static final Logger LOGGER = LogManager.getLogger();
-    CustomArray customArray = new CustomArray();
 
     @Override
     public int[] parseLineToArray(String line) {
@@ -20,9 +19,8 @@ public class CustomParsing implements CustomParsingService {
         for (int i = 0; i < ints.length; i++) {
             ints[i] = Integer.parseInt(strings[i]);
         }
-        customArray.setArray(ints);
-        LOGGER.info("Successful parsing" + Arrays.toString(customArray.getArray()));
-        return customArray.getArray();
+        LOGGER.info("Successful parsing" + Arrays.toString(ints));
+        return ints;
     }
 
     @Override
