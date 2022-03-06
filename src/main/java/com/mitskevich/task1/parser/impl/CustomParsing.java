@@ -1,6 +1,5 @@
 package com.mitskevich.task1.parser.impl;
 
-import com.mitskevich.task1.entity.CustomArray;
 import com.mitskevich.task1.parser.CustomParsingService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

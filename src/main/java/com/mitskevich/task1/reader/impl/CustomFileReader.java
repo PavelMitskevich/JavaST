@@ -14,7 +14,6 @@ import java.util.List;
 
 public class CustomFileReader implements CustomFileReaderService {
     private static final Logger LOGGER = LogManager.getLogger();
-//    public final String ARRAY_TXT = "C:\\Users\\Иван\\IdeaProjects\\JavaST\\src\\main\\resources\\array.txt";
     BufferedReader bufferedReader;
     CustomValidator customValidator = new CustomValidator();
 

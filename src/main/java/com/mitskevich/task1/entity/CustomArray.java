@@ -6,7 +6,7 @@ import com.mitskevich.task1.observer.impl.CustomArrayObservable;
 
 import java.util.Arrays;
 
-public class CustomArray extends CustomArrayObservable{
+public class CustomArray extends CustomArrayObservable {
     private int[] array;
     private int arrayId;
 
@@ -23,7 +23,7 @@ public class CustomArray extends CustomArrayObservable{
         this.array = new int[0];
         Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
         attach(new CustomArrayObserver());
-        }
+    }
 
     public int[] getArray() {
         return Arrays.copyOf(array, array.length);
