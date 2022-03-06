@@ -22,7 +22,7 @@ public class Main {
         CustomArray customArray = new CustomArray(new int[]{1, 2, 3, 4});
         System.out.println(customArray + " array");
         CustomArray customArray1 = new CustomArray();
-//
+
         CustomFileReaderService readerService = new CustomFileReader();
         String line = readerService.readLineFromFile("C:\\Users\\Иван\\IdeaProjects\\JavaST\\src\\main\\resources\\array.txt");
         CustomParsingService parsingService = new CustomParsing();
