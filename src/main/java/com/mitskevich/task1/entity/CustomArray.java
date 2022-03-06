@@ -1,21 +1,27 @@
 package com.mitskevich.task1.entity;
 
+import com.mitskevich.task1.observer.impl.CustomArrayObserver;
 import com.mitskevich.task1.util.IdGenerator;
+import com.mitskevich.task1.observer.impl.CustomArrayObservable;
 
 import java.util.Arrays;
 
-public class CustomArray {
+public class CustomArray extends CustomArrayObservable{
     private int[] array;
     private int arrayId;
 
     public CustomArray(int[] array) {
         this.array = array;
         arrayId = IdGenerator.generateId();
+        Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
     }
 
     public CustomArray() {
         arrayId = IdGenerator.generateId();
         array = getArray();
+        Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
+        attach(new CustomArrayObserver());
+        notifyObservers();
     }
 
     public int[] getArray() {
@@ -24,6 +30,8 @@ public class CustomArray {
 
     public void setArray(int... array) {
         this.array = array;
+        attach(new CustomArrayObserver());
+        notifyObservers();
     }
 
     public int getArrayId() {

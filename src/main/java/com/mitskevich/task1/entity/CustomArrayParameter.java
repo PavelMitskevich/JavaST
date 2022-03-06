@@ -1,6 +1,5 @@
 package com.mitskevich.task1.entity;
 
-import java.util.Objects;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
 

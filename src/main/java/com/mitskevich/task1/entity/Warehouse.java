@@ -29,4 +29,12 @@ public class Warehouse {
     public CustomArrayParameter remove(Integer id) {
         return this.arrayParameterMap.remove(id);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Warehouse{");
+        sb.append("arrayParameterMap=").append(arrayParameterMap);
+        sb.append('}');
+        return sb.toString();
+    }
 }
