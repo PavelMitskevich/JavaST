@@ -45,13 +45,12 @@ public class CustomFileReader implements CustomFileReaderService {
             while ((value = bufferedReader.readLine()) != null) {
                 if (customValidator.isValidLine(value)) {
                     lines.add(value);
-                    return lines;
                 }
             }
         } catch (IOException e) {
             LOGGER.error("This is exception: ", e);
         }
         bufferedReader.close();
-        return null;
+        return lines;
     }
 }
