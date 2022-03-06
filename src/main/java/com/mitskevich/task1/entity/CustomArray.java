@@ -18,7 +18,7 @@ public class CustomArray extends CustomArrayObservable{
 
     public CustomArray() {
         arrayId = IdGenerator.generateId();
-        array = getArray();
+        this.array = new int[0];
         Warehouse.getInstance().put(arrayId, new CustomArrayParameter());
         attach(new CustomArrayObserver());
         notifyObservers();
@@ -68,10 +68,10 @@ public class CustomArray extends CustomArrayObservable{
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int a : array) {
-            stringBuilder.append(a).append(" ");
-        }
-        return stringBuilder.toString();
+        final StringBuilder sb = new StringBuilder("CustomArray{");
+        sb.append("array=").append(Arrays.toString(array));
+        sb.append(", arrayId=").append(arrayId);
+        sb.append('}');
+        return sb.toString();
     }
 }
